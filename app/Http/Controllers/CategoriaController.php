@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoriaController extends Controller
 {
@@ -14,7 +15,8 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        $categoria=Categoria::all();
+        return view('categoria.index',compact('categoria'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+       return view('categoria.create');
     }
 
     /**
@@ -35,7 +37,14 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoria=$request->file('img')->store('public/imagenes');
+        $img=Storage::url($categoria);
+
+        Categoria::create($request->only('nombre_cat')+[
+            'img'=>$img
+        ]); 
+        
+        return redirect()->route('index.categoria')->with('crear', 'ok');
     }
 
     /**
@@ -56,8 +65,8 @@ class CategoriaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Categoria $categoria)
-    {
-        //
+    {     
+        return view('categoria.edit',compact('categoria'));
     }
 
     /**
@@ -69,7 +78,20 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, Categoria $categoria)
     {
-        //
+        $data=$request->only('nombre_cat');
+        $categoria->update($data);
+        if ($request->hasFile('img')) {
+            if ($categoria->img != '') {
+                $image=str_replace('storage','public',$categoria->img);
+                Storage::delete($image);
+
+                
+            }
+            $categori=$request->file('img')->store('public/imagenes');
+            $file=Storage::url($categori);
+            $categoria->update(['img'=>$file]);
+        }
+        return redirect()->route('index.categoria')->with('actualizar', 'ok');
     }
 
     /**
@@ -80,6 +102,9 @@ class CategoriaController extends Controller
      */
     public function destroy(Categoria $categoria)
     {
-        //
+        $image=str_replace('storage','public',$categoria->img);
+        Storage::delete($image);
+        $categoria->delete();
+        return redirect()->back()->with('elminar', 'ok');
     }
 }

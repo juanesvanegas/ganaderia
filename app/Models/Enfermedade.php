@@ -9,7 +9,7 @@ class Enfermedade extends Model
 {
     use HasFactory;
 
-    protected $filliable = [
+    protected $fillable = [
         'fecha_inicio',
         'tipo_enfermedad',
         'avance',

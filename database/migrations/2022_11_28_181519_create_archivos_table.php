@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('archivos', function (Blueprint $table) {
             $table->id();
-            $table->string('archivo',30);
+            $table->string('archivo',100);
             $table->unsignedBigInteger('categoria');
 
             $table->foreign('categoria')->references('id')->on('categorias')->onDelete('cascade');

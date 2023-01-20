@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Archivo;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArchivoController extends Controller
 {
@@ -14,7 +16,8 @@ class ArchivoController extends Controller
      */
     public function index()
     {
-        //
+        $archivo=Archivo::all();
+        return view('archivo.index',compact('archivo'));
     }
 
     /**
@@ -24,7 +27,13 @@ class ArchivoController extends Controller
      */
     public function create()
     {
-        //
+    $categoria =Categoria::all();
+
+    $data = array('lista_categorias' => $categoria);
+    
+
+  
+        return view('archivo.create',$data);
     }
 
     /**
@@ -35,7 +44,16 @@ class ArchivoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+            $archivo=$request->file('file')->store('public/archivos');
+            $file=Storage::url($archivo);
+    
+           Archivo::create($request->only('categoria')+[
+                'archivo'=>$file
+            ]); 
+            
+            return redirect()->route('index.archivo')->with('crear', 'ok');
+        
     }
 
     /**
@@ -57,7 +75,12 @@ class ArchivoController extends Controller
      */
     public function edit(Archivo $archivo)
     {
-        //
+        $categoria =Categoria::all();
+
+        $data = array('lista_categorias' => $categoria);
+
+
+        return view('archivo.edit',compact('archivo'),$data);
     }
 
     /**
@@ -69,7 +92,20 @@ class ArchivoController extends Controller
      */
     public function update(Request $request, Archivo $archivo)
     {
-        //
+        $data=$request->only('categoria');
+        $archivo->update($data);
+        if ($request->hasFile('file')) {
+            if ($archivo->archivo != '') {
+                $file=str_replace('storage','public',$archivo->archivo);
+                Storage::delete($file);
+
+                
+            }
+            $archiv=$request->file('file')->store('public/archivos');
+            $file=Storage::url($archiv);
+            $archivo->update(['archivo'=>$file]);
+        }
+        return redirect()->route('index.archivo')->with('actualizar', 'ok');
     }
 
     /**
@@ -80,6 +116,11 @@ class ArchivoController extends Controller
      */
     public function destroy(Archivo $archivo)
     {
-        //
+        $PDF=str_replace('storage','public',$archivo->archivo);
+        Storage::delete($PDF);
+
+        $archivo->delete();
+
+        return redirect()->back()->with('elminar', 'ok');
     }
 }

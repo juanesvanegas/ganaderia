@@ -9,7 +9,7 @@ class Archivo extends Model
 {
     use HasFactory;
 
-    protected $filliable = [
+    protected $fillable = [
 
         'archivo',
         'categoria'

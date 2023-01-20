@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Medicamento;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class MedicamentoController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        //
+        $medicamento=Medicamento::all();
+        return view('medicamento.index',compact('medicamento'));
     }
 
     /**
@@ -24,7 +25,7 @@ class MedicamentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('medicamento.create')->with('crear', 'ok');
     }
 
     /**
@@ -35,7 +36,23 @@ class MedicamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre_medic' => 'required',
+            'dosis_medic' => 'required',
+            'medio_admin' => 'required',
+            'unidad_medi' => 'required',
+            'fecha_cadu' => 'required'
+            
+        ]);
+        $request->all();
+        DB::table('medicamentos')->insert([
+            'nombre_medic'=>$request->nombre_medic,
+            'dosis_medic'=>$request->dosis_medic,
+            'medio_admin'=>$request->medio_admin,
+            'unidad_medi'=>$request->unidad_medi,
+            'fecha_cadu'=>$request->fecha_cadu
+        ]);
+        return redirect()->route('index.medicamento')->with('crear', 'ok');
     }
 
     /**
@@ -57,7 +74,8 @@ class MedicamentoController extends Controller
      */
     public function edit(Medicamento $medicamento)
     {
-        //
+        
+        return view('medicamento.edit', compact('medicamento'));
     }
 
     /**
@@ -69,7 +87,24 @@ class MedicamentoController extends Controller
      */
     public function update(Request $request, Medicamento $medicamento)
     {
-        //
+        $request->validate([
+            'nombre_medic' => 'required',
+            'dosis_medic' => 'required',
+            'medio_admin' => 'required',
+            'unidad_medi' => 'required',
+            'fecha_cadu' => 'required'
+            
+        ]);
+       
+     $medicamento->update([
+            'nombre_medic'=>$request->nombre_medic,
+            'dosis_medic'=>$request->dosis_medic,
+            'medio_admin'=>$request->medio_admin,
+            'unidad_medi'=>$request->unidad_medi,
+            'fecha_cadu'=>$request->fecha_cadu
+        ]);
+        return redirect()->route('index.medicamento')->with('actualizar', 'ok');
+    
     }
 
     /**
@@ -80,6 +115,7 @@ class MedicamentoController extends Controller
      */
     public function destroy(Medicamento $medicamento)
     {
-        //
+        $medicamento->delete();
+      return redirect()->back()->with('elminar', 'ok');
     }
 }

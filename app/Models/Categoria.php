@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Categoria extends Model
 { 
     use HasFactory;
-    protected $filliable = [
+    protected $fillable = [
         'nombre_cat',
         'img'
     ];
