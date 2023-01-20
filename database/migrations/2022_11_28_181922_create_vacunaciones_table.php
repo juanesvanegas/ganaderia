@@ -17,9 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('cantidad_usada',25);
             $table->date('fecha_realizacion');
+            $table->string('unidad_medi',25);
+            $table->string('medio_admin',25);
             $table->unsignedBigInteger('nombre_medic');
             $table->unsignedBigInteger('id_animal');
             $table->unsignedBigInteger('id_usuario');
+
 
             $table->foreign('nombre_medic')->references('id')->on('medicamentos')->onDelete('cascade');
             $table->foreign('id_animal')->references('id')->on('animals')->onDelete('cascade');

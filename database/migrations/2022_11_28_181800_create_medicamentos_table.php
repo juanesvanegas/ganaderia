@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombre_medic',25);
             $table->float('dosis_medic',25);
             $table->string('medio_admin',25);
+            $table->string('unidad_medi',25);
             $table->date('fecha_cadu');
             $table->timestamps();
         });

@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Medicamento extends Model
 {
     use HasFactory;
-    protected $filliable = [
+    protected $fillable = [
         'nombre_medic',
         'dosis_medic',
         'medio_admin',
-        'fecha_cadu'
+        'fecha_cadu',
+        'unidad_medi'
     ];
 
     public function vacunaciones(){

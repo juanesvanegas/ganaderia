@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Vacunacione extends Model
 {
     use HasFactory;
-    protected $filliable = [
+    protected $fillable = [
         
         'cantidad_usada',
         'fecha_realizacion',
         'nombre_medic',
+        'unidad_medi',
+        'medio_admin',
         'id_animal',
         'id_usuario'
     ];

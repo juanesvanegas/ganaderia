@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Animal;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class AnimalController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        //
+        $animal=Animal::all();
+        return view('animal.index',compact('animal'));
     }
 
     /**
@@ -24,7 +25,9 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        // $animal =Animal::all();
+        return view('animal.create');
+
     }
 
     /**
@@ -35,7 +38,23 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'identificador' => 'required',
+            'peso' => 'required',
+            'tipo'=>'required',
+            'raza' => 'required',
+            'fecha' => 'required'
+            
+        ]);
+        $request->all();
+        DB::table('animals')->insert([
+            'identificador'=>$request->identificador,
+            'peso'=>$request->peso,
+            'tipo_animal'=>$request->tipo,
+            'raza'=>$request->raza,
+            'fecha_nacimiento'=>$request->fecha
+        ]);
+        return redirect()->route('index.animal')->with('crear', 'ok');
     }
 
     /**
@@ -57,7 +76,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('animal.edit', compact('animal'));
     }
 
     /**
@@ -69,7 +88,23 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        //
+        $request->validate([
+            'identificador' => 'required',
+            'peso' => 'required',
+            'tipo'=>'required',
+            'raza' => 'required',
+            'fecha' => 'required'
+            
+        ]);
+      
+       $animal->update([
+            'identificador'=>$request->identificador,
+            'peso'=>$request->peso,
+            'tipo_animal'=>$request->tipo,
+            'raza'=>$request->raza,
+            'fecha_nacimiento'=>$request->fecha
+        ]);
+        return redirect()->route('index.animal')->with('actualizar', 'ok');
     }
 
     /**
@@ -80,6 +115,7 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        $animal->delete();
+      return redirect()->back()->with('elminar', 'ok');
     }
 }
