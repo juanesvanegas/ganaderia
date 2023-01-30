@@ -270,19 +270,19 @@ function closeNav() {
   <div class="main">
     <div class="navigation active">
       <span style="--i:0;--x:-1;--y:0;" >
-        <a href="{{route('index.categoria')}}"><ion-icon name="logo-laravel" > </ion-icon></a>
+        <a href="{{route('menu.categoria')}}"><ion-icon name="logo-laravel" > </ion-icon></a>
 	  </span>
       <span style="--i:1;--x:1;--y:0;">
-        <a href="{{route('index.archivo')}}">	<ion-icon name="albums"></ion-icon> </a>
+        <a href="#">	<ion-icon name="albums"></ion-icon> </a>
       </span>
       <span style="--i:2;--x:0;--y:-1;">
        <a href="{{route('index.medicamento')}}">	<ion-icon name="logo-twitter"></ion-icon> </a>
       </span>
       <span style="--i:3;--x:0;--y:1;">
-      <a href="{{route('index.animal')}}"> 	<ion-icon name="bug"></ion-icon></a>
+      <a href="{{route('index.animal')}}"> 	<ion-icon name="paw-outline"></ion-icon></a>
       </span>
       <span style="--i:4;--x:-1;--y:1;">
-        <a href="{{route('index.enfermedad')}}">	<ion-icon name="bandage"></ion-icon></a>
+        <a href="{{route('index.enfermedad')}}">	<ion-icon name="fitness-outline"></ion-icon></a>
       </span>
       <span style="--i:5;--x:-1;--y:-1;">
         <a href="{{route('index.vacunacion')}}">	<ion-icon name="logo-discord"></ion-icon></a>
@@ -291,7 +291,7 @@ function closeNav() {
       	<ion-icon name="logo-github" ></ion-icon>
       </span>
       <span style="--i:7;--x:1;--y:1;">
-      	<ion-icon name="logo-codepen"></ion-icon>
+      	<ion-icon name="fitness-outline"></ion-icon>
       </span>
     </div>
     <div class="close"><ion-icon name="close-outline"></ion-icon></div>

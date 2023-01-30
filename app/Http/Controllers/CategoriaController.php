@@ -19,6 +19,14 @@ class CategoriaController extends Controller
         return view('categoria.index',compact('categoria'));
     }
 
+    public function index1()
+    {
+      
+        return view('categoria.menu');
+    }
+
+
+  
     /**
      * Show the form for creating a new resource.
      *
