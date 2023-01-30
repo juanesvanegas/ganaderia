@@ -26,6 +26,9 @@ Route::get('/', function () {
 //categoria
 Route::get('/categoria',[CategoriaController::class,'index'])->name('index.categoria');
 
+Route::get('/categoria',[CategoriaController::class,'index1'])->name('menu.categoria');
+
+
 Route::get('/categoria/create',[CategoriaController::class,'create'])->name('create.categoria');
 
 Route::post('/categoria/create/store',[CategoriaController::class,'store'])->name('store.categoria');
@@ -45,6 +48,7 @@ Route::delete('/categoria/{categoria}',[CategoriaController::class,'destroy'])->
 //archivo
 
 Route::get('/archivo',[ArchivoController::class,'index'])->name('index.archivo');
+
 
 Route::get('/archivo/create',[ArchivoController::class,'create'])->name('create.archivo');
 

@@ -20,6 +20,9 @@ class ArchivoController extends Controller
         return view('archivo.index',compact('archivo'));
     }
 
+ 
+
+
     /**
      * Show the form for creating a new resource.
      *
