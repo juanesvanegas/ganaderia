@@ -49,13 +49,13 @@
             border-radius: 8px;
         }
         a:nth-child(1) {
-            width: 100px;
+            width: 130px;
         }
         a:nth-child(2) {
-            width: 110px;
+            width: 120px;
         }
         a:nth-child(3) {
-            width: 100px;
+            width: 180px;
         }
         a:nth-child(4) {
             width: 160px;
@@ -64,23 +64,23 @@
             width: 120px;
         }
         nav .start-home, a:nth-child(1):hover~.animation {
-            width: 100px;
+            width: 120px;
             left: 0;
             background-color: #1abc9c;
         }
         nav .start-about, a:nth-child(2):hover~.animation {
-            width: 110px;
-            left: 100px;
+            width: 145px;
+            left: 120px;
             background-color: #e74c3c;
         }
         nav .start-blog, a:nth-child(3):hover~.animation {
-            width: 100px;
-            left: 210px;
-            background-color: #3498db;
+            width: 140px;
+            left: 270px;
+            background-color: #34dbc2;
         }
         nav .start-portefolio, a:nth-child(4):hover~.animation {
-            width: 160px;
-            left: 310px;
+            width: 130px;
+            left: 440px;
             background-color: #9b59b6;
         }
         nav .start-contact, a:nth-child(5):hover~.animation {
@@ -99,7 +99,7 @@
             margin: 40px 0 40px;
             text-align: center;
             font-size: 30px;
-            color: #ecf0f1;
+            color: #0d0d0d;
             text-shadow: 2px 2px 4px #060505;
             font-family: 'Cherry Swash', cursive;
         }
@@ -120,15 +120,17 @@
     </style>
 </head>
 <body>
+
+    
 <nav>
-	<a href="#">Home</a>
-	<a href="#">About</a>
-	<a href="#">Blog</a>
-	<a href="#">Portefolio</a>
-	<a href="#">Contact</a>
+	<a href="#">Vacunación</a>
+	<a href="#">Desparacitación</a>
+	<a href="#">Enfermedades</a>
+	<a href="#">protocolo</a>
+	{{-- <a href="#">Contact</a> --}}
 	<div class="animation start-home"></div>
 </nav>
-
+<p><h1><b>Plan sanitario</b></h1></p>
     <div class="card-body">
             <div class="row">
                 <div class="col-md-12">
@@ -138,7 +140,7 @@
                                 <div class="author">
                                   
                                    <a href="{{route('create.archivo')}}" class="btn btn-outline-success">Agregar Archivo<i class="material-icons">add</i></a>
-                                   <a class="btn btn-success"  href="{{route('welcome')}}" style="position: relative;  left:1280px ; " >Inicio</a> 
+                                   <a class="btn btn-success"  href="{{route('welcome')}}" style="position: relative;  left:1200px ; " >Inicio</a> 
                                     <div class="card-body">
                                         <table class="table table-bordered table-striped" id="archivo">
                                             <thead class="table-secondary">

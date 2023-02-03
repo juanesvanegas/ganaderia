@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->date('fecha_inicio');
             $table->string('tipo_enfermedad',30);
-            $table->string('avance',50);
+            $table->string('tipo_diagnostico',30)->nullable();
+            $table->string('muerte',30);
+            $table->string('soporte',100)->nullable();
             $table->unsignedBigInteger('animal');
 
             $table->foreign('animal')->references('id')->on('animals')->onDelete('cascade');

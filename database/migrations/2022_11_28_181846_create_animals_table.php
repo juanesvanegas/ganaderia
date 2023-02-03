@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('identificador',25);
             $table->float('peso',25);
+            $table->string('unidad_medida',40);
             $table->string('tipo_animal',25);
             $table->string('raza',25);
             $table->date('fecha_nacimiento');

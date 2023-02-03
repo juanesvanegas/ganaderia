@@ -96,12 +96,15 @@
                                 <div class="col-md-6 col-12 ">
                                     <label>Usuario</label>
                                     <br>
-                                    <select class="form-select mb-4" name="nombre_medic" id="my-select"
+                                    <select class="form-select mb-4" name="id_usuario" id="my-select"
                                         required="required">
                                         @foreach ($users as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }} </option>
                                         @endforeach
                                     </select>
+
+
+                                    
 
                                 </div>
 
