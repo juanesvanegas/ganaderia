@@ -67,7 +67,6 @@ class VacunacioneController extends Controller
             'unidad_medi' => 'required',
             'medio_admin' => 'required',
             'nombre_medic' => 'required',
-         
             'id_usuario' => 'required',
             
         ]);

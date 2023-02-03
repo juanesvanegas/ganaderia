@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('medio_admin',25);
             $table->string('unidad_medi',25);
             $table->date('fecha_cadu');
+            $table->string('lote',25);
             $table->timestamps();
         });
     }

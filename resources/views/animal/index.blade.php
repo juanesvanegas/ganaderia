@@ -48,6 +48,7 @@
                                                 <td>{{$info->raza}}</td>
                                                 <td>{{$info->peso}}</td>
                                                 <td>{{$info->fecha_nacimiento}}</td>
+                                                <td>{{$info->fecha_nacimiento}}</td>
                                                <td class="td-actions text-center">
 
                                                      {{-- <div class="dropdown">
