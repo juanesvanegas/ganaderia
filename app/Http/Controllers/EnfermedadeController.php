@@ -45,15 +45,20 @@ class EnfermedadeController extends Controller
         $request->validate([
             'animal' => 'required',
             'tipo' => 'required',
-            'avance' => 'required',
-            'fecha_inicio' => 'required'
-            
+            'tipo_diagnostico' => 'required',
+            'fecha_inicio' => 'required',
+            'muerte' => 'required',
+            'soporte' => 'required',
+
+        
         ]);
         $request->all();
         DB::table('enfermedades')->insert([
             'fecha_inicio'=>$request->fecha_inicio,
             'tipo_enfermedad'=>$request->tipo,
-            'avance'=>$request->avance,
+            'tipo_diagnostico'=>$request->tipo_diagnostico,
+            'muerte'=>$request->muerte,
+            'soporte'=>$request->soporte,
             'animal'=>$request->animal
         ]);
         return redirect()->route('index.enfermedad')->with('crear', 'ok');
@@ -96,15 +101,19 @@ class EnfermedadeController extends Controller
         $request->validate([
             'animal' => 'required',
             'tipo' => 'required',
-            'avance' => 'required',
-            'fecha_inicio' => 'required'
+            'tipo_diagnostico' => 'required',
+            'fecha_inicio' => 'required',
+            'muerte' => 'required',
+            'soporte' => 'required',
             
         ]);
       $enfermedade->update([
-            'fecha_inicio'=>$request->fecha_inicio,
-            'tipo_enfermedad'=>$request->tipo,
-            'avance'=>$request->avance,
-            'animal'=>$request->animal
+        'fecha_inicio'=>$request->fecha_inicio,
+        'tipo_enfermedad'=>$request->tipo,
+        'tipo_diagnostico'=>$request->tipo_diagnostico,
+        'muerte'=>$request->muerte,
+        'soporte'=>$request->soporte,
+        'animal'=>$request->animal
         ]);
         return redirect()->route('index.enfermedad')->with('actualizar', 'ok');
     }

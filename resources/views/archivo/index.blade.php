@@ -146,7 +146,7 @@
                                             <thead class="table-secondary">
                                                 <tr style="text-align: center">
                                                     <th scope="col">Archivo</th>
-                                                    <th scope="col">Categoria</th>
+                                                    {{-- <th scope="col">Categoria</th> --}}
                                                     <th scope="col">Acciones</th>
                                                 </tr>
                                             </thead>
@@ -155,7 +155,10 @@
                                                 @foreach ($archivo as $info)
                                                     <tr style="text-align: center">
                                                         <td><a target="_black" href="{{asset($info->archivo)}}"><img src="{{asset('img/image.png')}}"  height="75" width="75" alt=""></a></td>
-                                                        <td>{{$info->categorias->nombre_cat}}</td>
+                                                        @foreach ($categorias as $item )
+                                                            
+                                                        @endforeach
+                                                        {{-- <td>{{$item->nombre_cat}}</td> --}}
                                                         
                                                         <td class="td-actions text-center">
     

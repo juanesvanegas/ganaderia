@@ -30,7 +30,9 @@
                                             <tr style="text-align: center">
                                                 <th scope="col">Animal</th>
                                                 <th scope="col">Tipo de enfermedad</th>
-                                                <th scope="col">Avance</th>
+                                                <th scope="col">Diagnostico</th>
+                                                <th scope="col">Muerte</th>
+                                                <th scope="col">Soporte</th>
                                                 <th scope="col">Fecha de inicio</th>
                                                
                                                 <th scope="col">Acciones</th>
@@ -41,7 +43,9 @@
                                                 <tr style="text-align: center">
                                                   <td>{{$info->animals->identificador}}</td>
                                                     <td>{{$info->tipo_enfermedad}}</td>
-                                                    <td>{{$info->avance}}</td>
+                                                    <td>{{$info->tipo_diagnostico}}</td>
+                                                    <td>{{$info->muerte}}</td>
+                                                    <td>{{$info->soporte}}</td>
                                                     <td>{{$info->fecha_inicio}}</td> 
                                                    
                                                     <td class="td-actions text-center">

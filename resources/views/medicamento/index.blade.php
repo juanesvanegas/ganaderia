@@ -53,10 +53,10 @@
                                    
                                                 <th scope="col">Nombre del medicamento</th>
                                                 <th scope="col">Dosis del medicamento</th>
-                                                <th scope="col">Medio de administración</th>
                                                 <th scope="col">Unidad de medida</th>
-                                                <th scope="col">Fecha de caducidad</th>
-                                               
+                                                <th scope="col">Medio de administración</th>
+                                               <th scope="col">Fecha de caducidad</th>
+                                                <th scope="col">Lote</th>
                                                 <th scope="col">Acciones</th>
                                             </tr>
                                         </thead>
@@ -65,9 +65,11 @@
                                                 <tr style="text-align: center">
                                                     <td>{{$info->nombre_medic}}</td>
                                                     <td>{{$info->dosis_medic}}</td>
-                                                    <td>{{$info->medio_admin}}</td>
                                                     <td>{{$info->unidad_medi}}</td>
+                                                    <td>{{$info->medio_admin}}</td>
+                                                    
                                                     <td>{{$info->fecha_cadu}}</td>
+                                                    <td>{{$info->lote}}</td>
                                                    
                                                     <td class="td-actions text-center">
 

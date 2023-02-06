@@ -41,7 +41,8 @@ class MedicamentoController extends Controller
             'dosis_medic' => 'required',
             'medio_admin' => 'required',
             'unidad_medi' => 'required',
-            'fecha_cadu' => 'required'
+            'fecha_cadu' => 'required',
+            'lote'=>'required'
             
         ]);
         $request->all();
@@ -50,7 +51,8 @@ class MedicamentoController extends Controller
             'dosis_medic'=>$request->dosis_medic,
             'medio_admin'=>$request->medio_admin,
             'unidad_medi'=>$request->unidad_medi,
-            'fecha_cadu'=>$request->fecha_cadu
+            'fecha_cadu'=>$request->fecha_cadu,
+            'lote'=> $request->lote
         ]);
         return redirect()->route('index.medicamento')->with('crear', 'ok');
     }
@@ -92,7 +94,8 @@ class MedicamentoController extends Controller
             'dosis_medic' => 'required',
             'medio_admin' => 'required',
             'unidad_medi' => 'required',
-            'fecha_cadu' => 'required'
+            'fecha_cadu' => 'required',
+            'lote'=>'required'
             
         ]);
        
@@ -101,7 +104,8 @@ class MedicamentoController extends Controller
             'dosis_medic'=>$request->dosis_medic,
             'medio_admin'=>$request->medio_admin,
             'unidad_medi'=>$request->unidad_medi,
-            'fecha_cadu'=>$request->fecha_cadu
+            'fecha_cadu'=>$request->fecha_cadu,
+            'lote'=>$request->lote
         ]);
         return redirect()->route('index.medicamento')->with('actualizar', 'ok');
     

@@ -37,8 +37,16 @@
                                     <input class="form-control mb-4" type="text" name="tipo"   value="{{ old('tipo', $enfermedade->tipo_enfermedad) }}">
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <label>Avance</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="avance" value=" ">{{ old('avance', $enfermedade->avance) }}</textarea>
+                                    <label>Diagnostico</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="tipo_diagnostico" >{{old('tipo_diagnostico',$enfermedade->tipo_diagnostico)}}</textarea>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <label>Muerte</label>
+                                    <input class="form-control mb-4" type="text" name="muerte" value="{{old('muerte',$enfermedade->muerte)}}">
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <label>Soporte</label>
+                                    <input class="form-control mb-4" type="text" name="soporte" value="{{old('soporte',$enfermedade->soporte)}}">
                                 </div>
                                   <div class="col-md-6 col-12">
                                     <label>Fecha de inicio</label>

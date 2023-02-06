@@ -35,8 +35,16 @@
                                     <input class="form-control mb-4" type="text" name="tipo">
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <label>Avance</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="avance"></textarea>
+                                    <label>Diagnostico</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="tipo_diagnostico"></textarea>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <label>Muerte</label>
+                                    <input class="form-control mb-4" type="text" name="muerte">
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <label>Soporte</label>
+                                    <input class="form-control mb-4" type="text" name="soporte">
                                 </div>
                                   <div class="col-md-6 col-12">
                                     <label>Fecha de inicio</label>

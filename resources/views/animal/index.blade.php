@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <p class="card-text">
                             <div class="author">
-                               <a class="btn btn-success" href="{{route('create.animal')}}">registrar animal</a>
+                               <a class="btn btn-success" href="{{route('create.animal')}}">Registrar animal</a>
                                <a class="btn btn-success"  href="{{route('welcome')}}" style="position: relative;  left:1280px ; " >Inicio</a> 
                                 <div class="card-body">
                                     <table class="table table-bordered table-striped" id="animal">
@@ -35,6 +35,7 @@
                                                 <th scope="col">Tipo de animal </th>
                                                 <th scope="col">Raza </th>
                                                 <th scope="col">Peso </th>
+                                                <th scope="col">Unidad de medida</th>
                                                 <th scope="col">Fecha de nacimiento o adquisición              </th> 
                                                 <th scope="col">Acciones</th>
                                           </tr>
@@ -47,7 +48,7 @@
                                                 <td>{{$info->tipo_animal}}</td>
                                                 <td>{{$info->raza}}</td>
                                                 <td>{{$info->peso}}</td>
-                                                <td>{{$info->fecha_nacimiento}}</td>
+                                                <td>{{$info->unidad_medida}}</td>
                                                 <td>{{$info->fecha_nacimiento}}</td>
                                                <td class="td-actions text-center">
 

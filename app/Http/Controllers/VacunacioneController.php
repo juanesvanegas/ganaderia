@@ -81,6 +81,29 @@ class VacunacioneController extends Controller
             'id_usuario'=>$request->id_usuario
 
         ]);
+
+
+               $medic=DB::select('select * from medicamentos where id=?',[$request->nombre_medic] );
+
+        foreach($medic as $medicamento){
+
+            $dosis_medic=$medicamento->dosis_medic;
+            $id=$medicamento->id;
+            $resta=$dosis_medic - $request->cantidad_usada;
+
+            $medicaentos = Medicamento::find($id);
+
+            $medicaentos->update([
+                'dosis_medic' => $resta,
+               
+            ]);
+    
+        }
+
+       
+
+        
+       
         return redirect()->route('index.vacunacion')->with('crear', 'ok');
     }
 
@@ -107,19 +130,17 @@ class VacunacioneController extends Controller
 
         $medicamento =Medicamento::all();
 
-        $data = array('lista_medicamentos' => $medicamento);
 
         $animal =Animal::all();
 
-        $data1 = array('lista_animales' => $animal);
+       
 
       
 
         $users = User ::all();
-        $data2 = array('lista_usuarios' => $users);
-
+        
  
-        return view('vacunacion.edit', compact('vacunacione'),$data1,$data);
+        return view('vacunacion.edit', compact('vacunacione','medicamento','animal','users'));
     }
 
     /**
