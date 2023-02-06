@@ -32,6 +32,22 @@
                                         
                                 </div>
 
+                                
+                            <div class="col-lg-6 col-12">
+                                <span>Unidad de Medida</span>
+                                <select class="form-select mb-4" name="unidad_medi" id="my-select" value="{{old('unidad_medi')}}" required="required">
+
+                                    <option value="">seleccione</option>
+                                    <option value="Miligramos">Miligramos (MG)</option>
+                                    <option value="Gramos">Gramos (GR)</option>
+                                    <option value="Gota">Gota (GOT)</option>
+                                    <option value="Mililitros">Mililitros (ML)</option>
+                                    <option value="Kilogramos">Kilogramos (KG)</option>
+                                    <option value="Centimetro cubico">Centimetros cubicos (C.C)</option>
+
+                                </select>
+                            </div>
+
 
                                 <div class="col-lg-6 col-12">
 
@@ -48,21 +64,13 @@
                                
                                   </div>
 
-                            <div class="col-lg-6 col-12">
-                                <span>Unidad de Medida</span>
-                                <select class="form-select mb-4" name="unidad_medi" id="my-select" value="{{old('unidad_medi')}}" required="required">
+                                <div class="col-lg-6 col-12">
 
-                                    <option value="">seleccione</option>
-                                    <option value="Miligramos">Miligramos (MG)</option>
-                                    <option value="Gramos">Gramos (GR)</option>
-                                    <option value="Gota">Gota (GOT)</option>
-                                    <option value="Mililitros">Mililitros (ML)</option>
-                                    <option value="Kilogramos">Kilogramos (KG)</option>
-                                    <option value="Centimetro cubico">Centimetros cubicos (C.C)</option>
-
-                                </select>
-                            </div>
-
+                                    
+                                    <span>Lote</span>
+                                    <input class="form-control mb-4" type="text" name="lote" value="{{old('lote')}}" required="required">
+                                    
+                                 </div>
 
                             </div><br>
 

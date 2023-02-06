@@ -12,7 +12,9 @@ class Enfermedade extends Model
     protected $fillable = [
         'fecha_inicio',
         'tipo_enfermedad',
-        'avance',
+        'tipo_diagnostico',
+        'muerte',
+        'soporte',
         'animal'
     ];
 

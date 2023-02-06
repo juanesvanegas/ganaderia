@@ -47,6 +47,24 @@
 
                                 </div>
 
+                                <div class="col-lg-6 col-12">
+                                    <span>Unidad de Medida</span>
+                                    <select class="form-select mb-4" name="unidad_medi" id="my-select"
+                                        required="required">
+                                        {{-- <option value=""></option> --}}
+                                         <option @if (old('unidad_medi', $medicamento->unidad_medi == 'Gota')) @selected(true) @endif
+                                            value="Gota">Gota (GOT)</option>
+
+                                            <option @if (old('unidad_medi', $medicamento->unidad_medi == 'Mililitros')) @selected(true) @endif
+                                                value="Mililitros">Mililitros (ML)</option>
+                                             <option @if (old('unidad_medi', $medicamento->unidad_medi == 'Centimetro cubico'))                                      @selected(true) @endif
+                                                value="Centimetro cubico">Centimetros cubicos (C.C)
+                                            </option>
+
+                                            <option @if (old('unidad_medi', $medicamento->unidad_medi == 'Miligramos'))                                      @selected(true) @endif value="Miligramos">Miligramos (MG)</option> 
+
+                                    </select>
+                               </div>
 
                                 <div class="col-lg-6 col-12">
 
@@ -64,22 +82,14 @@
                                         value="{{ old('fecha_cadu', $medicamento->fecha_cadu) }}" required="required">
                                </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <span>Unidad de Medida</span>
-                                    <select class="form-select mb-4" name="unidad_medi" id="my-select"
-                                        required="required">
-                                        <option value=""></option>
-                                        < <option @if (old('unidad_medi', $medicamento->unidad_medi == 'Gota')) @selected(true) @endif
-                                            value="Gota">Gota (GOT)</option>
+                               <div class="col-lg-6 col-12">
 
-                                            <option @if (old('unidad_medi', $medicamento->unidad_medi == 'Mililitros')) @selected(true) @endif
-                                                value="Mililitros">Mililitros (ML)</option>
-                                             <option @if (old('unidad_medi', $medicamento->unidad_medi == 'Centimetro cubico'))                                      @selected(true) @endif
-                                                value="Centimetro cubico">Centimetros cubicos (C.C)
-                                            </option>
+                                    
+                                <span>Lote</span>
+                                <input class="form-control mb-4" type="text" name="lote" value="{{old('lote', $medicamento->lote)}}" required="required">
+                                
+                             </div>
 
-                                    </select>
-                               </div>
                            </div><br>
 
                             <div class="col-lg-12">

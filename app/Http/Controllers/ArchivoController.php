@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Archivo;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ArchivoController extends Controller
@@ -16,13 +17,15 @@ class ArchivoController extends Controller
      */
     public function index()
     {
-        $archivo=Archivo::all();
-        return view('archivo.index',compact('archivo'));
+        // $archivo=Archivo::all();
+        $archivo=DB::select('select * from archivos  where categoria = ?', [1]);
+        $categorias=DB::select('select * from categorias  where id = ?', [1]);
+        return view('archivo.index',compact('archivo','categorias'));
     }
 
  
 
-
+    
     /**
      * Show the form for creating a new resource.
      *

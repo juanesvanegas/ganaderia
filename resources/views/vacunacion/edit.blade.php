@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Editar-aplicación</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                                     <label>Medicamento</label>
                                     <br>
                                     <select class="form-select mb-4" name="nombre_medic" id="my-select" required="required">
-                                        @foreach ($lista_medicamentos as $item)
+                                        @foreach ($medicamento as $item)
                                             <option value="{{$item->id}}">{{$item->nombre_medic}} </option>
                                         @endforeach
                                     </select>
@@ -99,7 +99,7 @@
                                     <label>Usuario</label>
                                     <br>
                                     <select class="form-select" name="nombre_medic" id="my-select" required="required">
-                                        @foreach ($lista_usuarios as $item)
+                                        @foreach ($users as $item)
                                             <option value="{{$item->id}}">{{$item->name}} </option>
                                         @endforeach
                                     </select>

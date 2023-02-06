@@ -28,6 +28,25 @@
                                 <input class="form-control mb-4" type="number" name="peso" value="{{old('peso', $animal->peso)}}"
                                 required="required">
                             </div>
+
+                            <div class="col-lg-6 col-12">
+                                <span>Unidad de Medida</span>
+                                <select class="form-select mb-4" name="unidad_medida" id="my-select" value="{{old('unidad_medida')}}" required="required">
+
+                                    <option value="">seleccione</option>
+                                    
+                                    <option @if (old('unidad_medida', $animal->unidad_medida)=="Kilogramos")
+                                        @selected(true)
+                                        @endif  value="Kilogramos">Kilogramos (KG)</option>
+                                    <option  @if (old('unidad_medida', $animal->unidad_medida)=="Libras")
+                                        @selected(true)
+                                        @endif value="Libras">Libras (LB)</option>
+
+                                </select>
+
+                            </div>
+
+
                               <div class="col-md-6 col-12">
                                 <label>Tipo animal</label>
                                 <input class="form-control mb-4" type="text" name="tipo" value="{{old('tipo_animal',$animal->tipo_animal) }}"

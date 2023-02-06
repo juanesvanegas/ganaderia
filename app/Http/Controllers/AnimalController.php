@@ -41,6 +41,7 @@ class AnimalController extends Controller
         $request->validate([
             'identificador' => 'required',
             'peso' => 'required',
+            'unidad_medida' => 'required',
             'tipo'=>'required',
             'raza' => 'required',
             'fecha' => 'required'
@@ -50,6 +51,7 @@ class AnimalController extends Controller
         DB::table('animals')->insert([
             'identificador'=>$request->identificador,
             'peso'=>$request->peso,
+            'unidad_medida'=>$request->unidad_medida,
             'tipo_animal'=>$request->tipo,
             'raza'=>$request->raza,
             'fecha_nacimiento'=>$request->fecha
@@ -91,6 +93,7 @@ class AnimalController extends Controller
         $request->validate([
             'identificador' => 'required',
             'peso' => 'required',
+            'unidad_medida' => 'required',
             'tipo'=>'required',
             'raza' => 'required',
             'fecha' => 'required'
@@ -100,6 +103,7 @@ class AnimalController extends Controller
        $animal->update([
             'identificador'=>$request->identificador,
             'peso'=>$request->peso,
+            'unidad_medida'=>$request->unidad_medida,
             'tipo_animal'=>$request->tipo,
             'raza'=>$request->raza,
             'fecha_nacimiento'=>$request->fecha

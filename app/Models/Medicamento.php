@@ -13,7 +13,9 @@ class Medicamento extends Model
         'dosis_medic',
         'medio_admin',
         'fecha_cadu',
-        'unidad_medi'
+        'unidad_medi',
+        'lote'
+
     ];
 
     public function vacunaciones(){
