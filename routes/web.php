@@ -49,6 +49,8 @@ Route::delete('/archivo/eliminar/{archivo}',    [ArchivoController::class,'destr
 Route::get('/archivo/{archivo}/edit',           [ArchivoController::class,'edit' ])->middleware('auth')->name('archivo.edit');
 Route::put('/archivo/{archivo}',                [ArchivoController::class,'update' ])->middleware('auth')->name('archivo.update');
 
+Route::get('/archivo/vacunacion',                          [ArchivoController::class,'vacunacion'])->middleware('auth')->name('vacunacion.archivo');
+
 // ----------------------------------------------------------------------------------------------------------------
 
 // Medicamento

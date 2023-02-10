@@ -23,6 +23,14 @@ class ArchivoController extends Controller
         return view('archivo.index',compact('archivo','categorias'));
     }
 
+
+    public function vacunacion()
+    {
+        // $archivo=Archivo::all();
+        $archivo=DB::select('select * from archivos  where categoria = ?', [2]);
+        $categorias=DB::select('select * from categorias  where id = ?', [2]);
+        return view('archivo.vacunacion',compact('archivo','categorias'));
+    }
  
 
     
@@ -58,7 +66,8 @@ class ArchivoController extends Controller
                 'archivo'=>$file
             ]); 
             
-            return redirect()->route('index.archivo')->with('crear', 'ok');
+             return redirect()->route('index.archivo')->with('crear', 'ok');
+          
         
     }
 

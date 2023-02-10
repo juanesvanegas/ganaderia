@@ -162,10 +162,10 @@
                                                         
                                                         <td class="td-actions text-center">
     
-                                                            {{-- <div class="dropdown">
+                                                             {{-- <div class="dropdown">
                                                                 <a class="btn btn-sm btn-icon-only text-dark" style="font-size: 20px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    <i class="fa-solid fa-bars"></i>
-                                                                    <div class="dropdown-menu dropdown-menu-center dropdown-menu-arrow"> --}}
+                                                                    <i class="fa-solid fa-bars"></i> 
+                                                                    <div class="dropdown-menu dropdown-menu-center dropdown-menu-arrow">  --}}
                                                                             <button href="{{route('archivo.edit',$info->id)}}" class="btn btn-outline-warning"><i class="material-icons">edit</i></button>
                                                                       
     

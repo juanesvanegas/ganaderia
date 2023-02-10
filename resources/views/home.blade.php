@@ -109,6 +109,14 @@ transition: 0.5s;
 scale: 1;
 transition-delay: 1s;
 }
+
+.dropdown{
+  
+position: fixed;
+top: 0;
+right: 0;
+    
+}
 </style>
 </head>
 <body>
@@ -139,10 +147,12 @@ transition-delay: 1s;
                         </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
+                <li class="nav-item dropdown" >
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white" v-pre >
+                         {{ Auth::user()->name }}
+                         <img src="img/avatar.jpg" class="rounded-circle mb-3" style="width: 50px;" alt="Avatar" />
+
+                     </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
